@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     private const string SAVE_NAME = "save_";
     private SaveObject[] _arraySaves;
     public GameObject loadPanel;
-    [SerializeField] private GameObject loadSaveButtom;
+    [SerializeField] private GameObject loadSaveButton;
 
     private void Awake()
     {
@@ -53,9 +53,9 @@ public class GameManager : MonoBehaviour
             {
                 loadedPlayer[i] = JsonUtility.FromJson<SaveObject>(loadJson[i]);
 
-                loadSaveButtom.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = SAVE_NAME + i;
-                loadSaveButtom.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = loadedPlayer[i].saveHour ?? null;
-                Instantiate(loadSaveButtom, loadPanel.transform);
+                loadSaveButton.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = SAVE_NAME + i;
+                loadSaveButton.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = loadedPlayer[i].saveHour ?? null;
+                Instantiate(loadSaveButton, loadPanel.transform);
             }
 
             if (loadedPlayer == null)
