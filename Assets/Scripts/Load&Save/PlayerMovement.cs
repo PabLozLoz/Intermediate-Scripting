@@ -1,46 +1,63 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private int speed;
-    [SerializeField] private int turnSpeed;
+    //Lo que hice fue que los if's llamaran a los métodos que quería que funcionaran
+    //y abajo tengo SetLoadPositionAndRotation, que lo llamo desde el GameManager
 
+    public int Speed { get; set; }
+
+    public int TurnSpeed { get; set; }
+
+    private float _horizontal;
+    private float _vertical;
 
     private void Awake()
     {
+        Speed = 2;
+        TurnSpeed = 45;
+
         SaveManager.Init();
     }
+
     private void Update()
     {
-        transform.Translate(speed * Vector3.forward * Input.GetAxis("Vertical") * Time.deltaTime);
-        transform.Rotate(turnSpeed * Vector3.up * Input.GetAxis("Horizontal") * Time.deltaTime);
+        GetInputPlayer();
+        Move();
+        TurnMove();
 
-        if (Input.GetMouseButtonDown(0) && !GameManager.gm.loadPanel.activeSelf)
-            GameManager.gm.SelectLoad();
-        if (Input.GetKeyDown(KeyCode.F6) && !GameManager.gm.loadPanel.activeSelf)
+        if (Input.GetMouseButtonDown(0) && !GameManager.GM.IsLoadPanelActive())
         {
-            GameManager.gm.Save(speed, turnSpeed, transform.position, transform.eulerAngles);
+            GameManager.GM.GenerateButtonsWithSaveStates();
+        }
+
+        if (Input.GetKeyDown(KeyCode.F6) && !GameManager.GM.IsLoadPanelActive())
+        {
+            GameManager.GM.Save(Speed, TurnSpeed, transform.position, transform.eulerAngles);
         }
 
         if (Input.GetKeyDown(KeyCode.F7))
         {
-
-            GameManager.gm.LoadLastSave();
+            GameManager.GM.LoadLastSave();
         }
-
     }
 
-    public void SetLoadPositionAndRotation(GameManager.SaveObject player)
+    private void TurnMove()
     {
-
-        transform.position = player.playerPosition;
-        transform.eulerAngles = player.playerRotation;
-        speed = player.speedPlayer;
-        turnSpeed = player.turnSpeedPlayer;
+        transform.Translate(_vertical * Speed * Time.deltaTime * Vector3.forward);
     }
 
+    private void Move()
+    {
+        transform.Rotate(_horizontal * TurnSpeed * Time.deltaTime * Vector3.up);
+    }
 
-
+    private void GetInputPlayer()
+    {
+        _horizontal = Input.GetAxis("Horizontal");
+        _vertical = Input.GetAxis("Vertical");
+    }
 }

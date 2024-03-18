@@ -175,8 +175,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e02bc73f59710aa499039bd3fb38498b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
-  turnSpeed: 45
 --- !u!23 &12540304
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -273,8 +271,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 469844c737c28794d848a4ac547f6354, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loadPanel: {fileID: 1669984491}
   loadSaveButton: {fileID: 7204609762238574377, guid: 9e49132ec743a6a4681dc88d34fa81e4, type: 3}
+  loadPanel: {fileID: 1669984491}
+  _arrayBtn: []
 --- !u!4 &16488208
 Transform:
   m_ObjectHideFlags: 0
@@ -367,7 +366,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 1
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
