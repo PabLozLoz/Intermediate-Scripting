@@ -6,7 +6,6 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     //Lo que hice fue que los if's llamaran a los métodos que quería que funcionaran
-    //y abajo tengo SetLoadPositionAndRotation, que lo llamo desde el GameManager
 
     public int Speed { get; set; }
 

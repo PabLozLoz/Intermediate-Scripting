@@ -8,14 +8,13 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    /* Intenté hacerlo todo en el PlayerMovement para hacer una lista de datos guardados para
-     * elegir un archivo y cargar este para poder seguir el video 60, pero...
+    /* Intenté hacerlo todo en el PlayerMovement para hacer una lista de datos guardados con la que
+     * elegir un archivo y cargar este con la intención de seguir el video 60, pero...
      * Todo se me torció muchísimo en el momento en que me di cuenta que el botón de guardado
      * era realmente un panel y quería utilizar el On Click del prefab. Que MUCHO MÁS TARDE deseché al ver que con
      * una llamada al ButtonScript podía hacer lo mismo, pero con un evento. Hice los cambios de panel a botón y 
      * ví que el método de On Click no se guardaba en el prefab por no tener el script puesto.
      * Por lo que terminé creando ButtonScript y en este punto ya no pude evitar hacer esta clase.
-     * Tuve que convertir la clase SaveObject en pública para poder llamarla desde PlayerMovement
      * 
      * Entonces viene todo el texto otra vez (lo siento)
      * Use de base del funcionamiento de botones en buscaminas.
@@ -25,7 +24,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject loadPanel;
     public static GameManager GM;
 
-    [SerializeField] private ButtonScript[] _arrayBtn;
     private List<ButtonScript> _listBtn;
 
     private SaveObject[] _arraySaves;

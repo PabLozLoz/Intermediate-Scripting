@@ -273,7 +273,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   loadSaveButton: {fileID: 7204609762238574377, guid: 9e49132ec743a6a4681dc88d34fa81e4, type: 3}
   loadPanel: {fileID: 1669984491}
-  _arrayBtn: []
 --- !u!4 &16488208
 Transform:
   m_ObjectHideFlags: 0
@@ -973,6 +972,7 @@ GameObject:
   - component: {fileID: 1669984494}
   - component: {fileID: 1669984493}
   - component: {fileID: 1669984495}
+  - component: {fileID: 1669984496}
   m_Layer: 5
   m_Name: LoadPanel
   m_TagString: Untagged
@@ -1061,6 +1061,36 @@ MonoBehaviour:
   m_Spacing: {x: 0, y: 0}
   m_Constraint: 0
   m_ConstraintCount: 2
+--- !u!114 &1669984496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1669984491}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1aa08ab6e0800fa44ae55d278d1423e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Content: {fileID: 1669984492}
+  m_Horizontal: 1
+  m_Vertical: 1
+  m_MovementType: 1
+  m_Elasticity: 0.1
+  m_Inertia: 1
+  m_DecelerationRate: 0.135
+  m_ScrollSensitivity: 30
+  m_Viewport: {fileID: 0}
+  m_HorizontalScrollbar: {fileID: 0}
+  m_VerticalScrollbar: {fileID: 0}
+  m_HorizontalScrollbarVisibility: 0
+  m_VerticalScrollbarVisibility: 0
+  m_HorizontalScrollbarSpacing: 0
+  m_VerticalScrollbarSpacing: 0
+  m_OnValueChanged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

@@ -1,1 +1,0 @@
-{"speedPlayer":2,"turnSpeedPlayer":45,"playerPosition":{"x":2.501178026199341,"y":1.0,"z":-3.323014497756958},"playerRotation":{"x":0.0,"y":235.24465942382813,"z":0.0},"saveHour":"18-03-2024   10:50:38","sourceSaveImage":"Assets/Resources/image_3.png"}
